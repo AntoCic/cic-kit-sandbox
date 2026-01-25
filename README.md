@@ -1,0 +1,1 @@
+Il sandbox di cic-kit è un progetto di esempio e sperimentazione usato per sviluppare, testare e documentare i componenti della libreria cic-kit in isolamento, facilitando debug, validazione visiva e casi d’uso reali.
