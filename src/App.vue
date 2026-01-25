@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { BtnCmp, ToastCmp } from 'cic-kit';
+import { onMounted } from 'vue';
 import { RouterView, useRoute, useRouter } from 'vue-router';
 
 const router = useRouter()
@@ -14,6 +15,10 @@ const page = {
   DemoToast: 'toast',
 }
 
+
+onMounted(() => {
+  document.getElementsByClassName('starter-loader')?.[0]?.remove();
+})
 </script>
 
 <template>
