@@ -28,10 +28,8 @@ export default defineConfig({
       ],
       injectManifest: {
         globPatterns: ['**/*.{js,css,html,woff2,woff,ttf,png,svg}'],
-        maximumFileSizeToCacheInBytes: 100 * 1024 * 1024,
-        globIgnores: [
-          'fonts/Noto_Color_Emoji/NotoColorEmoji-Regular.ttf',
-        ],
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+        globIgnores: [],
       },
       manifest: {
         name: 'HubCortex',

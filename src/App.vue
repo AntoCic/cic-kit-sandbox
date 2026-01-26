@@ -13,8 +13,13 @@ const page = {
   home: 'home',
   DemoBtnCmp: 'BtnCmp',
   DemoToast: 'toast',
+  DemoFirebaseModelApi: 'FirebaseModelApi',
 }
 
+
+// onBeforeMount(() => {
+//   get
+// })
 
 onMounted(() => {
   document.getElementsByClassName('starter-loader')?.[0]?.remove();

@@ -57,5 +57,9 @@ service cloud.firestore {
     match /settings/{id} {
       allow read, write: if isSignedIn();
     }
+
+    match /announcements/{id} {
+      allow read, write: if true;
+    }
   }
 }
