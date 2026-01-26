@@ -21,6 +21,7 @@ export default defineConfig({
       devOptions: { enabled: true, type: 'module' },
       injectRegister: false,
       includeAssets: [
+        'img/logo/pwa.png',
         'img/logo/logo.png',
         'fonts/GoogleIcon/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2',
         'fonts/Cal_Sans/CalSans-Regular.ttf',
@@ -40,7 +41,7 @@ export default defineConfig({
         theme_color: '#f7f6f6',
         description: 'App utility generali personali',
         icons: [
-          { src: '/img/logo/logo.png', sizes: '192x192', type: 'image/png' },
+          { src: '/img/logo/pwa.png', sizes: '192x192', type: 'image/png' },
         ],
 
       }
