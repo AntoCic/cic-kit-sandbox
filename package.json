@@ -8,14 +8,20 @@
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
     "install:local": "npm uninstall cic-kit && npm i ../cic-kit/cic-kit-0.0.9.tgz",
+    "i:o": "npm run install:online",
     "install:online": "npm uninstall cic-kit && npm install cic-kit@latest",
     "i:l": "npm run install:local",
-    "i:o": "npm run install:online",
+    "install:firebase-secrets-cli:local": "npm uninstall firebase-secrets-cli && npm i -D ../../firebase-secrets-cli/firebase-secrets-cli-1.0.1.tgz",
+    "i:f-cli:l": "npm run install:firebase-secrets-cli:local",
+    "install:firebase-secrets-cli:online": "npm uninstall firebase-secrets-cli && npm i -D firebase-secrets-cli@latest",
+    "i:f-cli:o": "npm run install:firebase-secrets-cli:online",
     "deploy": "npm run build && firebase deploy --only hosting,firestore,functions,storage",
     "start": "node ./.firebase-emulators/emu.js start",
     "emu:start": "node ./.firebase-emulators/emu.js start",
     "emu:help": "node ./.firebase-emulators/emu.js help",
-    "emu:save": "node ./.firebase-emulators/emu.js save"
+    "emu:save": "node ./.firebase-emulators/emu.js save",
+    "firebase-secrets": "npx firebase-secrets",
+    "bump": "npx cic-bump"
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
@@ -26,11 +32,15 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
+    "@inquirer/select": "^5.0.4",
     "@types/bootstrap": "^5.2.10",
     "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/tsconfig": "^0.8.1",
+    "firebase-secrets-cli": "file:../../firebase-secrets-cli/firebase-secrets-cli-1.0.1.tgz",
+    "inquirer": "^13.2.1",
     "sass": "^1.97.3",
+    "tsx": "^4.21.0",
     "typescript": "~5.9.3",
     "vite": "^7.2.4",
     "vite-plugin-pwa": "^1.0.3",

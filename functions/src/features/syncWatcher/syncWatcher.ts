@@ -1,6 +1,6 @@
 import { onDocumentWritten } from 'firebase-functions/v2/firestore';
 import { db } from '../../admin';
-import { REGION } from '../../env';
+import { REGION } from '../../config/env';
 import { Timestamp } from 'firebase-admin/firestore';
 
 type OldItem = Omit<SyncItem, 'oldItems'>

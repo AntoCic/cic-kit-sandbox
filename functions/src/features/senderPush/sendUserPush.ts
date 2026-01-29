@@ -5,7 +5,7 @@ import { onCall, HttpsError } from 'firebase-functions/v2/https';
 import { logger } from 'firebase-functions';
 import { WebpushConfig } from 'firebase-admin/messaging';
 import { db, messaging } from '../../admin';
-import { httpsDefaults } from '../../env';
+import { httpsDefaults } from '../../config/env';
 
 export const MAX_FCM_CHUNK = 500;
 export function chunk<T>(arr: T[], n = MAX_FCM_CHUNK): T[][] {

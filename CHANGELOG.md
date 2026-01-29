@@ -1,0 +1,6 @@
+## v0.0.0 - 2026-01-29
+
+testt per cic-push from pack esterno
+
+---
+
