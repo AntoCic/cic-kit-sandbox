@@ -1,46 +1,65 @@
 <script setup lang="ts">
-import { BtnCmp, ToastCmp } from 'cic-kit';
-import { onMounted } from 'vue';
-import { RouterView, useRoute, useRouter } from 'vue-router';
+import { ContainerSideTabs, ToastCmp, type SideTabComponent, type SideTabs } from 'cic-kit';
+import { computed, onMounted, ref } from 'vue';
+import { RouterView } from 'vue-router';
+import HeaderApp from './HeaderApp.vue';
+import router from './router';
 
-const router = useRouter()
-const route = useRoute();
+const active = ref("home")
 
-const routeTo = (name: string, query?: Record<string, any>) => router.push({ name, query })
-const isSelected = (name: string) => route.name === name
+const tabs = computed<SideTabs>(() => [
+  {
+    name: 'home',
+    label: 'home',
+    icon: 'home',
+  },
+  {
+    name: 'DemoContainerSidebar',
+    label: 'ContainerSidebar',
+    icon: 'view_sidebar',
+  },
+  {
+    name: 'DemoBtn',
+    label: 'Btn',
+    icon: 'smart_button',
+  },
+  {
+    name: 'DemoToast',
+    label: 'toast',
+    icon: 'notifications',
+  },
+  {
+    name: 'DemoFirebaseModelApi',
+    label: 'FirebaseModelApi',
+    icon: 'cloud',
+  },
+  {
+    name: 'DemoVeeValidate',
+    label: 'VeeValidate',
+    icon: 'fact_check',
+  },
+])
 
-const page = {
-  home: 'home',
-  DemoBtnCmp: 'BtnCmp',
-  DemoToast: 'toast',
-  DemoFirebaseModelApi: 'FirebaseModelApi',
-}
 
 
-// onBeforeMount(() => {
-//   get
-// })
+onMounted(() => document.getElementsByClassName('starter-loader')?.[0]?.remove())
 
-onMounted(() => {
-  document.getElementsByClassName('starter-loader')?.[0]?.remove();
-})
+const onSelect = (tab: SideTabComponent) => { router.push({ name: tab.name }) }
 </script>
 
 <template>
-  <nav>
-    <div class="nav nav-tabs" role="tablist">
-      <BtnCmp v-for="(label, routName) in page" :key="routName" color="dark"
-        :variant="isSelected(routName) ? 'solid' : 'ghost'" @click="routeTo(routName)">
-        {{ label }}
-      </BtnCmp>
-    </div>
-  </nav>
+  <HeaderApp></HeaderApp>
 
   <main>
-    <RouterView />
+    <ContainerSideTabs v-model="active" :tabs="tabs" @select="onSelect" :trackRoute="false" color="#30475E"
+      :sidebarMinWidth="250">
+      <RouterView />
+    </ContainerSideTabs>
   </main>
 
   <ToastCmp />
 </template>
 
-<style scoped></style>
+<style scoped>
+/* ciao mondo */
+</style>

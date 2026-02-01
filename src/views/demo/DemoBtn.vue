@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useRoute } from "vue-router";
-import { BtnCmp, type BtnColor, type BtnVariant } from "cic-kit";
+import { Btn, type BtnColor, type BtnVariant } from "cic-kit";
+import CodeBlock from "../utils/CodeBlock.vue";
 
 const route = useRoute();
 const colors: BtnColor[] = [
@@ -26,9 +27,9 @@ const currentRouteName = computed(() => String(route.name ?? ""));
     <div class="container">
         <div class="row text-center py-5">
             <div class="col-12 mb-4">
-                <h1>DemoBtnCmp</h1>
+                <h1>DemoBtn</h1>
                 <p class="text-muted mb-0">
-                    Showcase delle principali prop di <code>BtnCmp</code>: <code>color</code>,
+                    Showcase delle principali prop di <code>Btn</code>: <code>color</code>,
                     <code>variant</code>, <code>size</code>, <code>block</code>, <code>disabled</code>,
                     <code>loading</code>, <code>icon</code>, <code>to</code>.
                 </p>
@@ -61,10 +62,15 @@ const currentRouteName = computed(() => String(route.name ?? ""));
 
             <div class="col-12">
                 <div class="d-flex flex-wrap gap-2 justify-content-center">
-                    <BtnCmp v-for="c in colors" :key="c" :color="c">
+                    <Btn v-for="c in colors" :key="c" :color="c">
                         {{ c }}
-                    </BtnCmp>
+                    </Btn>
                 </div>
+            </div>
+            <div class="col-12 mt-2">
+                <CodeBlock>
+                    {{ `<Btn color="primary"> cliccami </Btn>` }}
+                </CodeBlock>
             </div>
         </section>
 
@@ -80,9 +86,9 @@ const currentRouteName = computed(() => String(route.name ?? ""));
 
             <div class="col-12">
                 <div class="d-flex flex-wrap gap-2 justify-content-center">
-                    <BtnCmp v-for="v in variants" :key="v" color="primary" :variant="v">
+                    <Btn v-for="v in variants" :key="v" color="primary" :variant="v">
                         {{ v }}
-                    </BtnCmp>
+                    </Btn>
                 </div>
 
                 <div class="mt-3 text-muted small">
@@ -105,15 +111,15 @@ const currentRouteName = computed(() => String(route.name ?? ""));
             <div class="col-12">
                 <div class="d-flex flex-column align-items-center gap-3">
                     <div class="d-flex flex-wrap gap-2 justify-content-center">
-                        <BtnCmp color="dark">default</BtnCmp>
-                        <BtnCmp color="dark" size="sm">sm</BtnCmp>
-                        <BtnCmp color="dark" size="lg">lg</BtnCmp>
+                        <Btn color="dark">default</Btn>
+                        <Btn color="dark" size="sm">sm</Btn>
+                        <Btn color="dark" size="lg">lg</Btn>
                     </div>
 
                     <div class="d-flex flex-wrap gap-2 justify-content-center">
-                        <BtnCmp color="success" variant="outline">default</BtnCmp>
-                        <BtnCmp color="success" variant="outline" size="sm">sm</BtnCmp>
-                        <BtnCmp color="success" variant="outline" size="lg">lg</BtnCmp>
+                        <Btn color="success" variant="outline">default</Btn>
+                        <Btn color="success" variant="outline" size="sm">sm</Btn>
+                        <Btn color="success" variant="outline" size="lg">lg</Btn>
                     </div>
                 </div>
             </div>
@@ -130,9 +136,9 @@ const currentRouteName = computed(() => String(route.name ?? ""));
 
             <div class="col-12 col-md-6 mx-auto">
                 <div class="d-flex flex-column gap-2">
-                    <BtnCmp color="primary" :block="true">Primary block</BtnCmp>
-                    <BtnCmp color="dark" variant="outline" :block="true">Outline block</BtnCmp>
-                    <BtnCmp color="secondary" variant="ghost" :block="true">Ghost block</BtnCmp>
+                    <Btn color="primary" :block="true">Primary block</Btn>
+                    <Btn color="dark" variant="outline" :block="true">Outline block</Btn>
+                    <Btn color="secondary" variant="ghost" :block="true">Ghost block</Btn>
                 </div>
             </div>
         </section>
@@ -148,10 +154,10 @@ const currentRouteName = computed(() => String(route.name ?? ""));
 
             <div class="col-12">
                 <div class="d-flex flex-wrap gap-2 justify-content-center">
-                    <BtnCmp color="primary" :disabled="true">Disabled solid</BtnCmp>
-                    <BtnCmp color="primary" variant="outline" :disabled="true">Disabled outline</BtnCmp>
-                    <BtnCmp color="primary" variant="ghost" :disabled="true">Disabled ghost</BtnCmp>
-                    <BtnCmp color="primary" variant="link" :disabled="true">Disabled link</BtnCmp>
+                    <Btn color="primary" :disabled="true">Disabled solid</Btn>
+                    <Btn color="primary" variant="outline" :disabled="true">Disabled outline</Btn>
+                    <Btn color="primary" variant="ghost" :disabled="true">Disabled ghost</Btn>
+                    <Btn color="primary" variant="link" :disabled="true">Disabled link</Btn>
                 </div>
             </div>
         </section>
@@ -167,9 +173,9 @@ const currentRouteName = computed(() => String(route.name ?? ""));
 
             <div class="col-12">
                 <div class="d-flex flex-wrap gap-2 justify-content-center">
-                    <BtnCmp color="success" :loading="true">Salvataggio…</BtnCmp>
-                    <BtnCmp color="danger" variant="outline" :loading="true">Eliminazione…</BtnCmp>
-                    <BtnCmp color="dark" variant="ghost" :loading="true">Caricamento…</BtnCmp>
+                    <Btn color="success" :loading="true">Salvataggio…</Btn>
+                    <Btn color="danger" variant="outline" :loading="true">Eliminazione…</Btn>
+                    <Btn color="dark" variant="ghost" :loading="true">Caricamento…</Btn>
                 </div>
             </div>
         </section>
@@ -186,11 +192,11 @@ const currentRouteName = computed(() => String(route.name ?? ""));
 
             <div class="col-12">
                 <div class="d-flex flex-wrap gap-2 justify-content-center">
-                    <BtnCmp color="primary" icon="add">Nuovo</BtnCmp>
-                    <BtnCmp color="warning" variant="outline" icon="edit">Modifica</BtnCmp>
-                    <BtnCmp color="danger" variant="solid" icon="delete">Elimina</BtnCmp>
-                    <BtnCmp color="dark" variant="ghost" icon="download">Download</BtnCmp>
-                    <BtnCmp color="info" variant="link" icon="open_in_new">Apri</BtnCmp>
+                    <Btn color="primary" icon="add">Nuovo</Btn>
+                    <Btn color="warning" variant="outline" icon="edit">Modifica</Btn>
+                    <Btn color="danger" variant="solid" icon="delete">Elimina</Btn>
+                    <Btn color="dark" variant="ghost" icon="download">Download</Btn>
+                    <Btn color="info" variant="link" icon="open_in_new">Apri</Btn>
                 </div>
             </div>
         </section>
@@ -212,18 +218,19 @@ const currentRouteName = computed(() => String(route.name ?? ""));
                     </div>
 
                     <div class="d-flex flex-wrap gap-2 justify-content-center">
-                        <BtnCmp color="primary" icon="home" :to="{ name: 'home' }">
+                        <Btn color="primary" icon="home" :to="{ name: 'home' }">
                             Vai a home
-                        </BtnCmp>
+                        </Btn>
 
-                        <BtnCmp color="secondary" variant="outline" icon="search"
+                        <Btn color="secondary" variant="outline" icon="search"
                             :to="{ name: 'home', query: { q: 'demo' } }">
                             Vai a home con query
-                        </BtnCmp>
+                        </Btn>
                     </div>
 
                     <div class="text-muted small mt-2">
-                        Se nel cic-kit-sandbox non hai una route <code>home</code>, aggiorna il <code>name</code> in base alle
+                        Se nel cic-kit-sandbox non hai una route <code>home</code>, aggiorna il <code>name</code> in
+                        base alle
                         tue routes.
                     </div>
                 </div>

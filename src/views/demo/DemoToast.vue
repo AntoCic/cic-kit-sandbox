@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BtnCmp, toast } from "cic-kit";
+import { Btn, toast } from "cic-kit";
 
 const typeToast = {
     success: "success",
@@ -35,6 +35,7 @@ const showDevToast = (type: keyof typeof typeDevToast) => {
         <div class="row text-center py-5">
             <div class="col-12 mb-4">
                 <h1>Toast</h1>
+                <Btn> ciao mondo </Btn>
                 <div class="alert alert-warning">
                     <strong>⚠️ Importante:</strong>
                     per far funzionare le <strong>toast notifications</strong> è necessario
@@ -59,10 +60,10 @@ const showDevToast = (type: keyof typeof typeDevToast) => {
 
             <div class="col-12">
                 <div class="d-flex flex-wrap gap-2 justify-content-center">
-                    <BtnCmp v-for="(color, toastType) in typeToast" :key="toastType" :color="color" icon="notifications"
+                    <Btn v-for="(color, toastType) in typeToast" :key="toastType" :color="color" icon="notifications"
                         @click="showToast(toastType)">
                         {{ toastType }}
-                    </BtnCmp>
+                    </Btn>
                 </div>
             </div>
         </section>
@@ -79,10 +80,10 @@ const showDevToast = (type: keyof typeof typeDevToast) => {
 
             <div class="col-12">
                 <div class="d-flex flex-wrap gap-2 justify-content-center">
-                    <BtnCmp v-for="(color, toastType) in typeDevToast" :key="toastType" :color="color" variant="outline"
+                    <Btn v-for="(color, toastType) in typeDevToast" :key="toastType" :color="color" variant="outline"
                         icon="bug_report" @click="showDevToast(toastType)">
                         {{ toastType }}
-                    </BtnCmp>
+                    </Btn>
                 </div>
             </div>
         </section>

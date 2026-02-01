@@ -2,7 +2,7 @@
 import { ref, computed, onMounted } from "vue"
 import type { Announcement } from "@src/models/Announcement"
 import { announcementStore } from "@src/stores/announcementStore"
-import { BtnCmp, toast } from "cic-kit"
+import { Btn, toast } from "cic-kit"
 
 // -------------------- UI state --------------------
 const loading = ref(false)
@@ -153,14 +153,14 @@ onMounted(reload)
             </div>
 
             <div class="col-12 col-md-auto d-flex gap-2">
-                <BtnCmp color="secondary" variant="outline" icon="refresh" :loading="loading" @click="reload">
+                <Btn color="secondary" variant="outline" icon="refresh" :loading="loading" @click="reload">
                     Reload
-                </BtnCmp>
+                </Btn>
 
-                <BtnCmp color="secondary" variant="outline" :icon="showForm ? 'expand_less' : 'add'"
+                <Btn color="secondary" variant="outline" :icon="showForm ? 'expand_less' : 'add'"
                     @click="showForm = !showForm">
                     {{ showForm ? "Nascondi form" : "Nuovo" }}
-                </BtnCmp>
+                </Btn>
             </div>
         </div>
 
@@ -176,12 +176,12 @@ onMounted(reload)
                     </div>
 
                     <div class="col-12 d-flex gap-2">
-                        <BtnCmp color="primary" type="submit" icon="save" :loading="loading">
+                        <Btn color="primary" type="submit" icon="save" :loading="loading">
                             Salva
-                        </BtnCmp>
-                        <BtnCmp color="secondary" variant="outline" icon="close" @click="resetNew">
+                        </Btn>
+                        <Btn color="secondary" variant="outline" icon="close" @click="resetNew">
                             Svuota
-                        </BtnCmp>
+                        </Btn>
                     </div>
                 </form>
             </div>
@@ -195,7 +195,7 @@ onMounted(reload)
 
             <div v-for="a in items" :key="a.id" class="list-group-item d-flex align-items-start">
                 <!-- Delete -->
-                <BtnCmp class="me-2" size="sm" color="danger" variant="outline" icon="delete" :disabled="loading"
+                <Btn class="me-2" size="sm" color="danger" variant="outline" icon="delete" :disabled="loading"
                     @click="removeAnnouncement(a.id)" />
 
                 <div class="flex-grow-1">
@@ -211,12 +211,12 @@ onMounted(reload)
                         </div>
 
                         <div class="mt-2 d-flex gap-2">
-                            <BtnCmp size="sm" color="success" icon="check" :loading="loading" @click="saveEdit(a.id)">
+                            <Btn size="sm" color="success" icon="check" :loading="loading" @click="saveEdit(a.id)">
                                 Salva
-                            </BtnCmp>
-                            <BtnCmp size="sm" color="secondary" variant="outline" icon="close" @click="cancelEdit">
+                            </Btn>
+                            <Btn size="sm" color="secondary" variant="outline" icon="close" @click="cancelEdit">
                                 Annulla
-                            </BtnCmp>
+                            </Btn>
                         </div>
                     </template>
 
@@ -227,7 +227,7 @@ onMounted(reload)
                                 {{ a.type }}
                                 <small class="text-muted">#{{ a.id }}</small>
                             </div>
-                            <BtnCmp size="sm" color="secondary" variant="ghost" icon="edit" :disabled="loading"
+                            <Btn size="sm" color="secondary" variant="ghost" icon="edit" :disabled="loading"
                                 @click="startEdit(a.id)" />
                         </div>
 
