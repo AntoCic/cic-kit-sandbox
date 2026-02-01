@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useRoute } from "vue-router";
-import { Btn, type BtnColor, type BtnVariant } from "cic-kit";
-import CodeBlock from "../utils/CodeBlock.vue";
+import { Btn, toast, type BtnColor, type BtnVariant } from "cic-kit";
+import CodeBlock from "../../utils/CodeBlock.vue";
 
 const route = useRoute();
 const colors: BtnColor[] = [
@@ -68,7 +68,7 @@ const currentRouteName = computed(() => String(route.name ?? ""));
                 </div>
             </div>
             <div class="col-12 mt-2">
-                <CodeBlock>
+                <CodeBlock @run="() => toast.success('sono stato cliccato')">
                     {{ `<Btn color="primary"> cliccami </Btn>` }}
                 </CodeBlock>
             </div>
@@ -218,12 +218,12 @@ const currentRouteName = computed(() => String(route.name ?? ""));
                     </div>
 
                     <div class="d-flex flex-wrap gap-2 justify-content-center">
-                        <Btn color="primary" icon="home" :to="{ name: 'home' }">
-                            Vai a home
+                        <Btn color="primary" icon="home" :to="{ name: 'Introduzione' }">
+                            Vai a Introduzione
                         </Btn>
 
                         <Btn color="secondary" variant="outline" icon="search"
-                            :to="{ name: 'home', query: { q: 'demo' } }">
+                            :to="{ name: 'Introduzione', query: { q: 'demo' } }">
                             Vai a home con query
                         </Btn>
                     </div>

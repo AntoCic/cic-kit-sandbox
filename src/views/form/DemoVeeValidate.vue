@@ -5,7 +5,7 @@ import { Field, ErrorMessage, useForm } from "vee-validate";
 import * as yup from "yup";
 import { toTypedSchema } from "@vee-validate/yup";
 import { Timestamp } from "firebase/firestore";
-import { Btn, ObjectDataViewer, toast } from "cic-kit";
+import { Btn, ObjectViewer, toast } from "cic-kit";
 
 
 export type PhoneNumber = [prefix: string, number: string];
@@ -273,7 +273,7 @@ const onSubmit = handleSubmit(async (vals) => {
         </div>
 
         <div class="col-12 mt-2">
-          <ObjectDataViewer :obj="sub" />
+          <ObjectViewer :obj="sub" />
         </div>
       </div>
     </form>

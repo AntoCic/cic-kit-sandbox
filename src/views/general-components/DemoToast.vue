@@ -35,7 +35,6 @@ const showDevToast = (type: keyof typeof typeDevToast) => {
         <div class="row text-center py-5">
             <div class="col-12 mb-4">
                 <h1>Toast</h1>
-                <Btn> ciao mondo </Btn>
                 <div class="alert alert-warning">
                     <strong>⚠️ Importante:</strong>
                     per far funzionare le <strong>toast notifications</strong> è necessario

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, h, ref } from "vue"
-import { toast, ContainerSideTabs, type SideTabComponent, type SideTabs, ObjectDataViewer } from "cic-kit";
-import { testObj } from "../utils/testObj";
+import { toast, ContainerSideTabs, type SideTabComponent, type SideTabs, ObjectViewer } from "cic-kit";
+import { testObj } from "../../utils/testObj";
 
 // tab attivo
 const active = ref("about")
@@ -15,7 +15,7 @@ const tabs = computed<SideTabs>(() => [
     component: {
       name: "IntroTab",
       setup() {
-        return () => h(ObjectDataViewer, { obj: testObj("Introduzione") })
+        return () => h(ObjectViewer, { obj: testObj("Introduzione") })
       },
     },
   },
@@ -30,7 +30,7 @@ const tabs = computed<SideTabs>(() => [
         component: {
           name: "ProfileTab",
           setup() {
-            return () => h(ObjectDataViewer, { obj: testObj("Profilo") })
+            return () => h(ObjectViewer, { obj: testObj("Profilo") })
           },
         },
       },
@@ -46,7 +46,7 @@ const tabs = computed<SideTabs>(() => [
         component: {
           name: "BillingTab",
           setup() {
-            return () => h(ObjectDataViewer, { obj: testObj("Billing (PRO)") })
+            return () => h(ObjectViewer, { obj: testObj("Billing (PRO)") })
           },
         },
       },
@@ -59,7 +59,7 @@ const tabs = computed<SideTabs>(() => [
     component: {
       name: "AboutTab",
       setup() {
-        return () => h(ObjectDataViewer, { obj: testObj("About") })
+        return () => h(ObjectViewer, { obj: testObj("About") })
       },
     },
   },

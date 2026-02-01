@@ -10,7 +10,8 @@
             <div class="col-12 mb-4">
                 <p>Pacchetto JavaScript pensato per essere riutilizzabile e facilmente integrabile in altri progetti.
                     Espone funzionalità modulari e ben isolate, sviluppate per essere consumate come dipendenza esterna
-                    tramite npm, ma testabili anche in locale durante lo sviluppo tramite un progetto cic-kit-sandbox. È pensato
+                    tramite npm, ma testabili anche in locale durante lo sviluppo tramite un progetto cic-kit-sandbox. È
+                    pensato
                     per semplificare lo sviluppo, favorire il riuso del codice e mantenere una struttura chiara e
                     manutenibile.</p>
             </div>

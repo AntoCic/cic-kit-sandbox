@@ -1,3 +1,9 @@
+## v0.0.2 - 2026-02-01
+
+ADD demo Objviewr utils and test
+
+---
+
 ## v0.0.1 - 2026-02-01
 
 add from update cic-kit 0.00.15
