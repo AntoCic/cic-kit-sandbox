@@ -20,6 +20,9 @@ import DemoCopyToClipboard from './views/utils/DemoCopyToClipboard.vue';
 import DemoDelay from './views/utils/DemoDelay.vue';
 import DemoPickRandom from './views/utils/DemoPickRandom.vue';
 import DemoObjectViewer from './views/components/DemoObjectViewer.vue';
+import DemoAccordion from './views/components/DemoAccordion.vue';
+import DemoContainerSub from './views/components/DemoContainerSub.vue';
+import DemoBtnMoveIcon from './views/components/DemoBtnMoveIcon.vue';
 
 // ===================================================================================================
 export const routes: RouteRecordRaw[] = [
@@ -28,8 +31,11 @@ export const routes: RouteRecordRaw[] = [
   { path: '/get-start', name: 'Get start', component: GetStarted, meta: { group: '_home', icon: 'line_start_circle' } },
 
   // _components
+  { path: '/DemoAccordion', name: 'Accordion', component: DemoAccordion, meta: { group: '_components', icon: '' } },
   { path: '/DemoBtn', name: 'Btn', component: DemoBtn, meta: { group: '_components', icon: 'smart_button' } },
+  { path: '/DemoBtnMoveIcon', name: 'Btn Move Icon', component: DemoBtnMoveIcon, meta: { group: '_components' } },
   { path: '/DemoContainerSidebar', name: 'Container Sidebar', component: DemoContainerSidebar, meta: { group: '_components', icon: 'view_sidebar' } },
+  { path: '/DemoContainerSub', name: 'Container Sub', component: DemoContainerSub, meta: { group: '_components' } },
   { path: '/DemoObjectViewer', name: 'Object Viewer', component: DemoObjectViewer, meta: { group: '_components' } },
 
   // _general-components

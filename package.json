@@ -1,13 +1,13 @@
 {
   "name": "cic-kit-sandbox",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "install:local": "npm uninstall cic-kit && npm i ../cic-kit/cic-kit-0.0.16.tgz",
+    "install:local": "npm uninstall cic-kit && npm i ../cic-kit/cic-kit-0.0.18.tgz",
     "i:l": "npm run install:local",
     "install:online": "npm uninstall cic-kit && npm install cic-kit@latest",
     "i:o": "npm run install:online",
@@ -16,7 +16,7 @@
     "install:firebase-secrets-cli:online": "npm uninstall firebase-secrets-cli && npm i -D firebase-secrets-cli@latest",
     "i:f-cli:o": "npm run install:firebase-secrets-cli:online",
     "only-deploy": "firebase deploy --only hosting,firestore,functions,storage",
-    "deploy": "npm run build && npx cic-bump && npx cic-push",
+    "deploy": "npm run build && npx cic-bump && npx cic-push && npm run only-deploy",
     "deploy-no-push": "npm run build && npx cic-bump && npm run only-deploy",
     "start": "node ./.firebase-emulators/emu.js start",
     "emu:start": "node ./.firebase-emulators/emu.js start",
@@ -29,7 +29,7 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "@wdns/vue-code-block": "^2.3.5",
     "bootstrap": "^5.3.8",
-    "cic-kit": "file:../cic-kit/cic-kit-0.0.16.tgz",
+    "cic-kit": "^0.0.18",
     "firebase": "^12.0.0",
     "vue": "^3.5.24",
     "vue-router": "^4.6.4"
