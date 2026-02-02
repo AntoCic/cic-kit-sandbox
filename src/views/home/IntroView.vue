@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { BtnMoveIcon } from 'cic-kit';
+
+const reload = () => window.location.reload();
 </script>
 
 <template>
@@ -14,6 +17,9 @@
                     pensato
                     per semplificare lo sviluppo, favorire il riuso del codice e mantenere una struttura chiara e
                     manutenibile.</p>
+            </div>
+            <div class="col-12">
+                <BtnMoveIcon icon="refresh" @click="reload">Ricarica</BtnMoveIcon>
             </div>
         </div>
     </div>

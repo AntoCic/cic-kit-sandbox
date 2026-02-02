@@ -1,3 +1,9 @@
+## v0.0.4 - 2026-02-02
+
+Fix name manifest and  add btn refresh
+
+---
+
 ## v0.0.3 - 2026-02-02
 
 Add demo: Accordion, BtnMoveIcon, ContainerSub

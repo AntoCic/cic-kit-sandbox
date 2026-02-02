@@ -33,8 +33,8 @@ export default defineConfig({
         globIgnores: [],
       },
       manifest: {
-        name: 'HubCortex',
-        short_name: 'HubCortex',
+        name: 'cic-kit',
+        short_name: 'cic-kit',
         start_url: '/',
         display: 'fullscreen',
         background_color: '#f7f6f6',

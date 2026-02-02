@@ -31,7 +31,7 @@ export const routes: RouteRecordRaw[] = [
   { path: '/get-start', name: 'Get start', component: GetStarted, meta: { group: '_home', icon: 'line_start_circle' } },
 
   // _components
-  { path: '/DemoAccordion', name: 'Accordion', component: DemoAccordion, meta: { group: '_components', icon: '' } },
+  { path: '/DemoAccordion', name: 'Accordion', component: DemoAccordion, meta: { group: '_components' } },
   { path: '/DemoBtn', name: 'Btn', component: DemoBtn, meta: { group: '_components', icon: 'smart_button' } },
   { path: '/DemoBtnMoveIcon', name: 'Btn Move Icon', component: DemoBtnMoveIcon, meta: { group: '_components' } },
   { path: '/DemoContainerSidebar', name: 'Container Sidebar', component: DemoContainerSidebar, meta: { group: '_components', icon: 'view_sidebar' } },
