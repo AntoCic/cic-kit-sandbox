@@ -1,13 +1,13 @@
 {
   "name": "cic-kit-sandbox",
   "private": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "install:local": "npm uninstall cic-kit && npm i ../cic-kit/cic-kit-0.0.18.tgz",
+    "install:local": "npm uninstall cic-kit && npm i ../cic-kit/cic-kit-0.0.19.tgz",
     "i:l": "npm run install:local",
     "install:online": "npm uninstall cic-kit && npm install cic-kit@latest",
     "i:o": "npm run install:online",
@@ -29,7 +29,7 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "@wdns/vue-code-block": "^2.3.5",
     "bootstrap": "^5.3.8",
-    "cic-kit": "^0.0.18",
+    "cic-kit": "^0.0.19",
     "firebase": "^12.0.0",
     "vue": "^3.5.24",
     "vue-router": "^4.6.4"

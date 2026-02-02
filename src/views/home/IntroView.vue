@@ -21,6 +21,66 @@ const reload = () => window.location.reload();
             <div class="col-12">
                 <BtnMoveIcon icon="refresh" @click="reload">Ricarica</BtnMoveIcon>
             </div>
+
+            <div class="col-12">
+                <p>
+                    <br><br># TODO
+
+                    <br> esportare + demo :: Logo
+                    <br> esportare + demo :: AvatarCmp
+                    <br> esportare + demo :: Modal
+                    <br> esportare + demo :: AppConfigViewDev
+                    <br> esportare + demo :: FirestoreDevView
+                    <br> esportare + demo :: LSViewDev
+                    <br> esportare + demo :: MsgPushViewDev
+                    <br> esportare + demo :: HomeViewDev
+
+                    <br><br>Firebase / Firestore
+                    <br> esportare + demo :: firebase
+                    <br> esportare + demo :: FirestoreModel
+                    <br> esportare + demo :: FirestoreStore
+                    <br> esportare + demo :: middlewareCatchCall
+                    <br> esportare + demo :: useStoreWatch
+                    <br> esportare + demo :: FirebaseStorage
+                    <br> esportare + demo :: ImgUploader
+
+                    <br><br>Form validator
+                    <br> esportare + demo :: FormValidator
+                    <br> esportare + demo :: InputValueParser
+                    <br> esportare + demo :: Validator
+
+                    <br><br> rinominare se necessari per mettere prima input o prima Field
+                    <br> esportare + demo :: FieldGender
+                    <br> esportare + demo :: Gender
+                    <br> esportare + demo :: FieldPhoneNumber
+                    <br> esportare + demo :: PhoneNumber
+                    <br> esportare + demo :: ColorTag
+                    <br> esportare + demo :: ColorTagInput
+                    <br> esportare + demo :: TagInput
+                    <br> esportare + demo :: InputField
+                    <br> esportare + demo :: TiptapField
+
+                    <br> esportare + demo :: pushMsg
+                    <br> esportare + demo :: RegisterSW
+                    <br> esportare + demo :: parseTimestamp
+                    <br> esportare + demo :: FooterApp
+                    <br> esportare + demo :: HeaderApp
+                    <br> esportare + demo :: ToolbarTab
+                    <br> esportare + demo :: useChangeToolbar
+
+                    <br> esportare + demo :: AvatarUser
+                    <br> esportare + demo :: AvatarUserCmp
+                    <br> esportare + demo :: AvatarUserEditor
+                    <br> esportare + demo :: AvatarUserPicker
+                    <br> esportare + demo :: AvatarUserPickerGender
+
+                    <br> controllare import necessari per router.ts controllare con GameScore
+                    <br> controllare import necessari per App.vue controllare con GameScore
+                    <br> controllare import necessari per sw.ts controllare con GameScore
+
+                    <br> controllare import necessari per creare pacchetto cic-functions-kit.ts
+                </p>
+            </div>
         </div>
     </div>
 </template>

@@ -2,7 +2,7 @@
 import { computed, useSlots, getCurrentInstance, ref } from "vue";
 import { VCodeBlock } from "@wdns/vue-code-block";
 
-defineOptions({ name: "CodeBlockWrapper" });
+defineOptions({ name: "CodeBlocK" });
 
 type Props = {
   code?: string;

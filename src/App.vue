@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ContainerSideTabs, ToastCmp, type SideTabComponent, type SideTabs } from 'cic-kit';
+import { cicKitStore, ContainerSideTabs, LoaderCmp, loading, ToastCmp, type SideTabComponent, type SideTabs } from 'cic-kit';
 import { computed, onMounted, ref } from 'vue';
 import { RouterView, type RouteRecordRaw } from 'vue-router';
 import HeaderApp from './HeaderApp.vue';
@@ -74,7 +74,6 @@ const tabs = computed<SideTabs>(() => {
       icon: ui.icon,
       subTabs: items
         .slice()
-        .sort((a, b) => a.label.localeCompare(b.label))
         .map(i => ({
           name: i.routeName,
           label: i.label,
@@ -108,12 +107,21 @@ const tabs = computed<SideTabs>(() => {
 
 
 
-onMounted(() => document.getElementsByClassName('starter-loader')?.[0]?.remove())
+onMounted(() => {
+  document.getElementsByClassName('starter-loader')?.[0]?.remove()
+
+  //! non usare nei progetti 
+  cicKitStore.debugMod = true;
+})
+
+
+
 
 const onSelect = (tab: SideTabComponent) => { router.push({ name: tab.name }) }
 </script>
 
 <template>
+  <LoaderCmp v-if="loading.state" />
   <HeaderApp></HeaderApp>
 
   <main>
