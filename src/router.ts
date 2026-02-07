@@ -28,6 +28,10 @@ import DemoLoading from './views/global-components/DemoLoading.vue';
 import DemoCicKitStore from './views/global-components/DemoCicKitStore.vue';
 import DemoLS from './views/utils/DemoLS.vue';
 import DemoShareLink from './views/utils/DemoShareLink.vue';
+import DemoModal from './views/components/DemoModal.vue';
+import DemoLogo from './views/components/DemoLogo.vue';
+import DemoAvatar from './views/components/DemoAvatar.vue';
+import DemoAuth from './views/global-components/DemoAuth.vue';
 
 // ===================================================================================================
 export const routes: RouteRecordRaw[] = [
@@ -37,13 +41,17 @@ export const routes: RouteRecordRaw[] = [
 
   // _components
   { path: '/demo-accordion', name: 'Accordion', component: DemoAccordion, meta: { group: '_components' } },
+  { path: '/demo-avatar', name: 'Avatar', component: DemoAvatar, meta: { group: '_components' } },
   { path: '/demo-btn', name: 'Btn', component: DemoBtn, meta: { group: '_components', icon: 'smart_button' } },
   { path: '/demo-btn-move-icon', name: 'Btn Move Icon', component: DemoBtnMoveIcon, meta: { group: '_components' } },
   { path: '/demo-container-sidebar', name: 'Container Sidebar', component: DemoContainerSidebar, meta: { group: '_components', icon: 'view_sidebar' } },
   { path: '/demo-container-sub', name: 'Container Sub', component: DemoContainerSub, meta: { group: '_components' } },
+  { path: '/demo-logo', name: 'Logo', component: DemoLogo, meta: { group: '_components' } },
+  { path: '/demo-modal', name: 'Modal', component: DemoModal, meta: { group: '_components' } },
   { path: '/demo-object-viewer', name: 'Object Viewer', component: DemoObjectViewer, meta: { group: '_components' } },
 
   // _general-components
+  { path: '/demo-auth', name: 'auth', component: DemoAuth, meta: { group: '_global-components' } },
   { path: '/demo-cicKitStore', name: 'cicKitStore', component: DemoCicKitStore, meta: { group: '_global-components' } },
   { path: '/demo-loading', name: 'Loading', component: DemoLoading, meta: { group: '_global-components' } },
   { path: '/demo-toast', name: 'Toast', component: DemoToast, meta: { group: '_global-components', icon: 'notifications' } },

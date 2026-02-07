@@ -49,9 +49,9 @@ service cloud.firestore {
       allow write: if isSignedIn() && hasUserPermission('SUPERADMIN');
     }
 
-    match /users_public/{userId} {
+    match /public_users/{userId} {
       allow read: if isSignedIn();
-      allow write: if isOwner(userId);
+      allow write: if false;
     }
 
     match /settings/{id} {
