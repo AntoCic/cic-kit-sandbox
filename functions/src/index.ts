@@ -1,4 +1,8 @@
-/* === gestisce l'invio di una notifica push a un utente ====================== */
-export { sendUserPush } from './features/senderPush/sendUserPush';
+import { cicInit } from 'cic-kit-firebase-functions';
 
-export { syncPublicUser } from './features/syncPublicUser/syncPublicUser';
+const { sendUserPush, syncPublicUser } = cicInit({
+  region: 'europe-west1',
+  https: { cors: true },
+});
+
+export { sendUserPush, syncPublicUser };
