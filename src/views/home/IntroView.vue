@@ -88,6 +88,39 @@ const reload = () => window.location.reload();
                     <br> controllare import necessari per creare pacchetto cic-functions-kit.ts
                 </p>
             </div>
+
+            <div class="col-12">
+                <div class="d-flex flex-wrap gap-2">
+                    <Btn icon="home" :to="{ name: 'home' }">
+                        Home
+                    </Btn>
+
+                    <Btn icon="login" :to="{ name: 'login' }">
+                        Login
+                    </Btn>
+
+                    <Btn icon="person_add" :to="{ name: 'register' }">
+                        Register
+                    </Btn>
+
+                    <Btn icon="lock_reset" :to="{ name: 'reset-password' }">
+                        Reset password
+                    </Btn>
+
+                    <Btn icon="person" :to="{ name: 'user' }">
+                        User
+                    </Btn>
+
+                    <Btn icon="block" :to="{ name: 'unauthorized' }">
+                        Unauthorized
+                    </Btn>
+
+                    <Btn icon="error" :to="{ name: 'not-found' }">
+                        Not found (404)
+                    </Btn>
+                </div>
+
+            </div>
         </div>
     </div>
 </template>

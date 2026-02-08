@@ -1,3 +1,9 @@
+## v0.0.8 - 2026-02-08
+
+ADD router and default views
+
+---
+
 ## v0.0.7 - 2026-02-08
 
 ADD auth form

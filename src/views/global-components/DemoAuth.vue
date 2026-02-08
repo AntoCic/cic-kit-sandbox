@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Auth } from "@src/main";
-import { BtnGoogleLogin, BtnMoveIcon, ObjectViewer, Btn, toast } from "cic-kit";
+import { BtnGoogleLogin, BtnMoveIcon, ObjectViewer, Btn } from "cic-kit";
 import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
 import { toTypedSchema } from "@vee-validate/yup";
@@ -60,31 +60,15 @@ const registerSchema = toTypedSchema(
 );
 
 async function onLogin(values: LoginValues) {
-    console.log("login:", values);
-
     Auth.loginWithPassword(values.email, values.password)
-        .then(() => toast.success("Login valido ✅ (demo)"))
-        .catch((e) => {
-            console.dir(e);
-        })
 }
 
 async function onReset(values: ResetValues) {
-    console.log("onReset:", values);
-
-    Auth.resetPassword(values.email)
-        .then(() => toast.success("Login valido ✅ (demo)"))
-        .catch((e) => {
-            console.dir(e);
-        })
+    Auth.resetPassword(values.email);
 }
 
 async function onRegister(values: RegisterValues) {
-    console.log("register:", values);
-
-    Auth.register(values.name, values.surname, values.email, values.password)
-        .then(() => toast.success("Registrazione valida ✅ (demo)"))
-        .catch(() => toast.error('Errore'))
+    Auth.register(values.name, values.surname, values.email, values.password);
 }
 </script>
 

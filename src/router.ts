@@ -1,7 +1,7 @@
 // router.ts
-import { createRouter, createWebHistory } from 'vue-router'
-import type { RouteRecordRaw } from 'vue-router';
-import { ErrorView } from 'cic-kit';
+
+import { createWebHistory, type RouteRecordRaw } from 'vue-router';
+import { ErrorView, HomeView, initRouter, LoginView, RegisterView, ResetPasswordView, UserView } from 'cic-kit';
 import IntroView from './views/home/IntroView.vue'
 import DemoBtn from './views/components/DemoBtn.vue';
 import DemoToast from './views/global-components/DemoToast.vue';
@@ -32,6 +32,7 @@ import DemoModal from './views/components/DemoModal.vue';
 import DemoLogo from './views/components/DemoLogo.vue';
 import DemoAvatar from './views/components/DemoAvatar.vue';
 import DemoAuth from './views/global-components/DemoAuth.vue';
+import DemoViewsSettings from './views/views/DemoViewsSettings.vue';
 
 // ===================================================================================================
 export const routes: RouteRecordRaw[] = [
@@ -40,54 +41,57 @@ export const routes: RouteRecordRaw[] = [
   { path: '/getting-started', name: 'Getting started', component: GettingStarted, meta: { group: '_home', icon: 'line_start_circle' } },
 
   // _components
-  { path: '/demo-accordion', name: 'Accordion', component: DemoAccordion, meta: { group: '_components' } },
-  { path: '/demo-avatar', name: 'Avatar', component: DemoAvatar, meta: { group: '_components' } },
+  { path: '/demo-accordion', name: 'Accordion', component: DemoAccordion, meta: { group: '_components', icon: 'expand_more' } },
+  { path: '/demo-avatar', name: 'Avatar', component: DemoAvatar, meta: { group: '_components', icon: 'account_circle' } },
   { path: '/demo-btn', name: 'Btn', component: DemoBtn, meta: { group: '_components', icon: 'smart_button' } },
-  { path: '/demo-btn-move-icon', name: 'Btn Move Icon', component: DemoBtnMoveIcon, meta: { group: '_components' } },
+  { path: '/demo-btn-move-icon', name: 'Btn Move Icon', component: DemoBtnMoveIcon, meta: { group: '_components', icon: 'swap_horiz' } },
   { path: '/demo-container-sidebar', name: 'Container Sidebar', component: DemoContainerSidebar, meta: { group: '_components', icon: 'view_sidebar' } },
-  { path: '/demo-container-sub', name: 'Container Sub', component: DemoContainerSub, meta: { group: '_components' } },
-  { path: '/demo-logo', name: 'Logo', component: DemoLogo, meta: { group: '_components' } },
-  { path: '/demo-modal', name: 'Modal', component: DemoModal, meta: { group: '_components' } },
-  { path: '/demo-object-viewer', name: 'Object Viewer', component: DemoObjectViewer, meta: { group: '_components' } },
+  { path: '/demo-container-sub', name: 'Container Sub', component: DemoContainerSub, meta: { group: '_components', icon: 'view_agenda' } },
+  { path: '/demo-logo', name: 'Logo', component: DemoLogo, meta: { group: '_components', icon: 'deployed_code' } },
+  { path: '/demo-modal', name: 'Modal', component: DemoModal, meta: { group: '_components', icon: 'dialogs' } },
+  { path: '/demo-object-viewer', name: 'Object Viewer', component: DemoObjectViewer, meta: { group: '_components', icon: 'data_object' } },
 
-  // _general-components
-  { path: '/demo-auth', name: 'auth', component: DemoAuth, meta: { group: '_global-components' } },
-  { path: '/demo-cicKitStore', name: 'cicKitStore', component: DemoCicKitStore, meta: { group: '_global-components' } },
-  { path: '/demo-loading', name: 'Loading', component: DemoLoading, meta: { group: '_global-components' } },
+  // _global-components
+  { path: '/demo-auth', name: 'Auth', component: DemoAuth, meta: { group: '_global-components', icon: 'verified_user' } },
+  { path: '/demo-cicKitStore', name: 'cicKitStore', component: DemoCicKitStore, meta: { group: '_global-components', icon: 'dns' } },
+  { path: '/demo-loading', name: 'Loading', component: DemoLoading, meta: { group: '_global-components', icon: 'progress_activity' } },
   { path: '/demo-toast', name: 'Toast', component: DemoToast, meta: { group: '_global-components', icon: 'notifications' } },
 
   // _firebase
-  { path: '/demo-firebase-model-Aapi', name: 'FirebaseModelApi', component: DemoFirebaseModelApi, meta: { group: '_firebase', icon: 'cloud' } },
+  { path: '/demo-firebase-model-api', name: 'FirebaseModelApi', component: DemoFirebaseModelApi, meta: { group: '_firebase', icon: 'cloud' } },
 
   // _form
   { path: '/demo-vee-validate', name: 'Vee Validate', component: DemoVeeValidate, meta: { group: '_form', icon: 'fact_check' } },
 
-  // _views
-  { path: '/Eerror-view', name: 'Error', component: ErrorView, meta: { group: '_views', icon: 'computer_cancel' } },
+  // _views (coerenti e senza collisioni)
+  { path: '/views/settings', name: 'settings', component: DemoViewsSettings, meta: { group: '_views', icon: 'settings_applications' } },
+  { path: '/views/home', name: 'View: Home', component: HomeView, meta: { group: '_views', icon: 'home' } },
+  { path: '/views/login', name: 'View: Login', component: LoginView, meta: { group: '_views', icon: 'login' } },
+  { path: '/views/register', name: 'View: Register', component: RegisterView, meta: { group: '_views', icon: 'person_add' } },
+  { path: '/views/reset-password', name: 'View: Reset Password', component: ResetPasswordView, meta: { group: '_views', icon: 'lock_reset' } },
+  { path: '/views/user', name: 'View: User', component: UserView, meta: { group: '_views', icon: 'account_circle' } },
+  { path: '/views/error', name: 'View: Error', component: ErrorView, meta: { group: '_views', icon: 'error' } },
 
   // _test
   { path: '/demo-genera-colore', name: 'Genera Colore', component: DemoGeneraColore, meta: { group: '_test', icon: 'palette' } },
   { path: '/demo-genera-date', name: 'Genera Date', component: DemoGeneraDate, meta: { group: '_test', icon: 'event' } },
   { path: '/demo-genera-dati-personali', name: 'Genera Dati Personali', component: DemoGeneraDatiPersonali, meta: { group: '_test', icon: 'badge' } },
-  { path: '/demo-genera-numero', name: 'Genera Numero', component: DemoGeneraNumero, meta: { group: '_test', icon: 'badge' } },
+  { path: '/demo-genera-numero', name: 'Genera Numero', component: DemoGeneraNumero, meta: { group: '_test', icon: 'numbers' } },
   { path: '/demo-genera-testo', name: 'Genera Testo', component: DemoGeneraTesto, meta: { group: '_test', icon: 'article' } },
 
   // _utils
   { path: '/demo-copy-to-clipboard', name: 'CopyToClipboard', component: DemoCopyToClipboard, meta: { group: '_utils', icon: 'content_copy' } },
   { path: '/demo-delay', name: 'Delay', component: DemoDelay, meta: { group: '_utils', icon: 'timer' } },
-  { path: '/demo-ls', name: 'LS', component: DemoLS, meta: { group: '_utils' } },
-  { path: '/demo-network', name: 'Network', component: DemoNetwork, meta: { group: '_utils' } },
+  { path: '/demo-ls', name: 'LS', component: DemoLS, meta: { group: '_utils', icon: 'storage' } },
+  { path: '/demo-network', name: 'Network', component: DemoNetwork, meta: { group: '_utils', icon: 'wifi' } },
   { path: '/demo-pick-random', name: 'PickRandom', component: DemoPickRandom, meta: { group: '_utils', icon: 'casino' } },
-  { path: '/demo-share-link', name: 'ShareLink', component: DemoShareLink, meta: { group: '_utils' } },
-  { path: '/demo-use-debounce', name: 'UseDebounce', component: DemoUseDebounce, meta: { group: '_utils', icon: 'speed' }, },
+  { path: '/demo-share-link', name: 'ShareLink', component: DemoShareLink, meta: { group: '_utils', icon: 'share' } },
+  { path: '/demo-use-debounce', name: 'UseDebounce', component: DemoUseDebounce, meta: { group: '_utils', icon: 'speed' } },
   { path: '/demo-use-routeTo', name: 'UseRouteTo', component: DemoUseRouteTo, meta: { group: '_utils', icon: 'alt_route' } },
-
-  // --- 404 catch-all (deve stare in fondo)
-  { path: '/:pathMatch(.*)*', name: 'not-found', component: ErrorView, props: (route) => ({ kind: '404' as const, attemptedPath: route.fullPath }) },
-]
+];
 
 // ===================================================================================================
-export const router = createRouter({
+export const router = initRouter({
   history: createWebHistory(),
   routes
 })
