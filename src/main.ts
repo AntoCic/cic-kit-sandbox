@@ -3,13 +3,12 @@ import App from "./App.vue";
 // import * as bootstrap from 'bootstrap';
 import { router } from "./router";
 import "./main.scss";
-import { setupFirebase, Auth, initAuth, _CurrentUser, _PublicUser } from "cic-kit";
+import { setupFirebase, initAuth, _CurrentUser, _PublicUser } from "cic-kit";
 import { firebaseConfig } from "./firebase-config";
 
 setupFirebase(firebaseConfig);
-initAuth(_CurrentUser)
-
-Auth?.checkAuth();
+export const Auth = initAuth(_CurrentUser);
+Auth.checkAuth();
 
 const app = createApp(App);
 app.use(router);

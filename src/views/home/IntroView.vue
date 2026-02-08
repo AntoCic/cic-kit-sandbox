@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { BtnMoveIcon } from 'cic-kit';
+import { Auth } from '@src/main';
+import { Btn, BtnMoveIcon } from 'cic-kit';
 
 const reload = () => window.location.reload();
 </script>
@@ -7,8 +8,14 @@ const reload = () => window.location.reload();
 <template>
     <div class="container">
         <div class="row pt-3 pb-t">
-            <div class="col-12  text-center mb-3">
+            <div class="col mb-3">
                 <h1 class="f-monoton">cic-kit-sandbox cic-kit</h1>
+            </div>
+            <div class="col-auto mb-3">
+                <Btn v-if="!Auth.isLoggedIn" icon="account_circle" variant="ghost" class="rounded-pill p-1"
+                    :to="{ name: 'auth' }" />
+                <Btn v-else icon="power_settings_circle" color="danger" variant="ghost" class="rounded-pill p-1"
+                    @click="() => Auth.logout()" />
             </div>
             <div class="col-12 mb-4">
                 <p>Pacchetto JavaScript pensato per essere riutilizzabile e facilmente integrabile in altri progetti.

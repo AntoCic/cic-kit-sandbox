@@ -195,7 +195,7 @@ const currentRouteName = computed(() => String(route.name ?? ""));
 
                 <div class="mt-3">
                     <CodeBlock @run="load">
-                        {{ `<Btn color="primary" block >Primary block</Btn>` }}
+                        {{ `<Btn color="primary" block>Primary block</Btn>` }}
                     </CodeBlock>
                 </div>
             </div>
@@ -294,16 +294,18 @@ const currentRouteName = computed(() => String(route.name ?? ""));
                     </div>
 
                     <div class="d-flex flex-wrap gap-2 justify-content-center">
-                        <Btn color="primary" icon="home" :to="{ name: 'Introduzione' }" :loading="loading"> Vai a Introduzione </Btn>
+                        <Btn color="primary" icon="home" :to="{ name: 'Introduzione' }" :loading="loading"> Vai a
+                            Introduzione </Btn>
 
                         <Btn color="secondary" variant="outline" icon="search"
                             :to="{ name: 'Introduzione', query: { q: 'demo' } }" :loading="loading">
                             Vai a home con query
                         </Btn>
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-3 w-100">
                         <CodeBlock @run="load">
-                            {{ `<Btn color="primary" icon="home" :to="{ name: 'Introduzione' }"> Vai a Introduzione </Btn>` }}
+                            {{ `<Btn color="primary" icon="home" :to="{ name: 'Introduzione' }"> Vai a Introduzione
+                            </Btn>` }}
                         </CodeBlock>
                     </div>
 
