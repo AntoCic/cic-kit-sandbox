@@ -29,10 +29,10 @@ async function runDemo() {
 const isOn = computed(() => loading.state);
 
 const codeOn = `
-loading.on();
-loading.on('Caricamento');
+loading.on('keyTest');
+loading.on('keyTest','Caricamento');
 
-loading.off();
+loading.off('keyTest');
 `
 
 const codeRun = `
@@ -61,8 +61,8 @@ const defaultMsg = computed(() =>
 
         <div class="d-flex flex-wrap gap-2 mb-3">
             <Btn color="primary" variant="solid"
-                @click="loading.on('Se vuoi chiudere il loader devi aggiornare la pagina')">loading.on()</Btn>
-            <Btn color="secondary" variant="outline" @click="loading.off()">loading.off()</Btn>
+                @click="loading.on('test','Se vuoi chiudere il loader devi aggiornare la pagina')">loading.on()</Btn>
+            <Btn color="secondary" variant="outline" @click="loading.off('test')">loading.off()</Btn>
             <Btn color="success" variant="solid" @click="runDemo()">loading.run() (5s)</Btn>
         </div>
 

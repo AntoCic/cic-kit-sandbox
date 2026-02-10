@@ -1,3 +1,9 @@
+## v0.0.9 - 2026-02-10
+
+Aggiorna regole storage e dipendenze; aggiunge demo route e piccole pulizie UI
+
+---
+
 ## v0.0.8 - 2026-02-08
 
 ADD router and default views

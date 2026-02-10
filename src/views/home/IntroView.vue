@@ -13,7 +13,7 @@ const reload = () => window.location.reload();
             </div>
             <div class="col-auto mb-3">
                 <Btn v-if="!Auth.isLoggedIn" icon="account_circle" variant="ghost" class="rounded-pill p-1"
-                    :to="{ name: 'auth' }" />
+                    :to="{ name: 'View: Login' }" />
                 <Btn v-else icon="power_settings_circle" color="danger" variant="ghost" class="rounded-pill p-1"
                     @click="() => Auth.logout()" />
             </div>

@@ -8,7 +8,6 @@ import { firebaseConfig } from "./firebase-config";
 
 setupFirebase(firebaseConfig);
 export const Auth = initAuth(_CurrentUser);
-Auth.checkAuth();
 
 const app = createApp(App);
 app.use(router);

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import router from '@src/router'
 import CodeBlock from '@src/utils/CodeBlock.vue'
 import { Btn, useRouteTo, type RouteToOpts } from 'cic-kit'
 import { computed, ref, watch } from 'vue'
@@ -174,6 +175,10 @@ function fillExample(which: "Introduzione" | "Btn" | "Vee Validate" | "Toast") {
                             <div>
                                 <h2 class="h5 mb-1">Route corrente</h2>
                             </div>
+                            <Btn color="secondary" variant="outline" icon="star"
+                                @click="() => console.log(router.getRoutes())">
+                                router
+                            </Btn>
                             <Btn color="secondary" variant="outline" icon="delete" @click="clearLog">
                                 Pulisci log
                             </Btn>

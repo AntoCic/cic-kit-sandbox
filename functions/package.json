@@ -16,7 +16,7 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "cic-kit-firebase-functions": "^0.0.2",
+    "cic-kit-firebase-functions": "^0.0.3",
     "firebase-admin": "^13.6.0",
     "firebase-functions": "^7.0.0",
     "graphql": "^16.12.0"

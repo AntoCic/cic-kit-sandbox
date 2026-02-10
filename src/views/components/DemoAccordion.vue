@@ -14,14 +14,6 @@ const customId = ref("demoAccordionCustom");
 
 const logs = ref<LogItem[]>([]);
 
-function onOpen(label: string, ev: MouseEvent) {
-    const at = new Date().toLocaleTimeString();
-    logs.value.unshift({
-        at,
-        msg: `open: "${label}" (target: ${(ev.target as HTMLElement)?.tagName ?? "?"})`,
-    });
-}
-
 function clearLogs() {
     logs.value = [];
 }
@@ -131,8 +123,7 @@ const usageCustomHeader = computed(() => `<Accordion
                         <span class="badge text-bg-secondary">props</span>
                     </div>
 
-                    <Accordion :id="baseId" :title="title" :disabled="disabled" class="mb-3"
-                        @open="(ev) => onOpen('Base', ev)">
+                    <Accordion :id="baseId" :title="title" :disabled="disabled" class="mb-3">
                         <div class="vstack gap-2">
                             <div class="fw-semibold">Contenuto nello slot default</div>
                             <div class="text-body-secondary">
@@ -158,7 +149,7 @@ const usageCustomHeader = computed(() => `<Accordion
                         <span class="badge text-bg-primary">slot</span>
                     </div>
 
-                    <Accordion :id="customId" :title="title2" class="mb-3" @open="(ev) => onOpen('Custom header', ev)">
+                    <Accordion :id="customId" :title="title2" class="mb-3">
                         <template #header>
                             <div class="d-flex align-items-center gap-2 w-100">
                                 <span class="material-symbols-outlined">auto_awesome</span>
@@ -205,7 +196,7 @@ const usageCustomHeader = computed(() => `<Accordion
                         <span class="badge text-bg-warning">empty</span>
                     </div>
 
-                    <Accordion id="demoAccordionEmpty" title="Accordion vuoto" @open="(ev) => onOpen('Empty', ev)" />
+                    <Accordion id="demoAccordionEmpty" title="Accordion vuoto" />
                     <div class="form-text mt-2">
                         Qui lo slot default è vuoto: si vede il tuo placeholder con l’icona warning.
                     </div>
