@@ -1,0 +1,9 @@
+node_modules
+functions/node_modules
+dist
+.git
+.github
+.vscode
+.firebase
+.firebase-emulators/state
+firestore-debug.log
