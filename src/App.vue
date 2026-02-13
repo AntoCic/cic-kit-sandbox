@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { cicKitStore, ContainerSideTabs, LoaderCmp, loading, ToastCmp, type SideTabComponent, type SideTabs } from 'cic-kit';
-import { computed, onMounted, ref } from 'vue';
-import { RouterView, type RouteRecordRaw } from 'vue-router';
+import { cicKitStore, ContainerSideTabs, defaultUserPermission, LoaderCmp, loading, ToastCmp, ToolbarApp, type SideTabComponent, type SideTabs, toolbarOffcanvasStore, ModalDev, RegisterSW } from 'cic-kit';
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { RouterView, useRoute, type RouteRecordRaw } from 'vue-router';
 import HeaderApp from './HeaderApp.vue';
 import router, { routes } from './router';
+import { Auth } from './main';
+import { toolbarOffcanvasTabs } from "./toolbarMenu";
 
+const route = useRoute();
 const active = ref("intro")
 
 const GROUP_UI: Record<string, { label: string; icon: string }> = {
@@ -106,23 +109,32 @@ const tabs = computed<SideTabs>(() => {
 });
 
 
+const onSelect = (tab: SideTabComponent) => { router.push({ name: tab.name }) }
+function applyToolbarMenu() {
+  toolbarOffcanvasStore.title = "Demo Menu";
+  toolbarOffcanvasStore.setTabs(toolbarOffcanvasTabs);
+}
+
+watch(
+  () => route.name,
+  () => {
+    applyToolbarMenu();
+  },
+  { immediate: true, flush: "post" }
+);
 
 onMounted(() => {
-  document.getElementsByClassName('starter-loader')?.[0]?.remove()
-
-  //! non usare nei progetti 
-  cicKitStore.debugMod = true;
+  document.getElementsByClassName('starter-loader')?.[0]?.remove();
 })
-
-
-
-
-const onSelect = (tab: SideTabComponent) => { router.push({ name: tab.name }) }
+onBeforeUnmount(() => {
+  toolbarOffcanvasStore.title = "Menu";
+  toolbarOffcanvasStore.setTabs(undefined);
+});
 </script>
 
 <template>
   <LoaderCmp v-if="loading.state" />
-  <HeaderApp></HeaderApp>
+  <HeaderApp />
 
   <main>
     <ContainerSideTabs v-model="active" :tabs="tabs" @select="onSelect" :trackRoute="false" color="#30475E"
@@ -131,7 +143,10 @@ const onSelect = (tab: SideTabComponent) => { router.push({ name: tab.name }) }
     </ContainerSideTabs>
   </main>
 
+  <ToolbarApp glass primary-dark="#F05454" primary-light=" #31475e4d" />
+  <ModalDev v-if="Auth?.user?.hasPermission(defaultUserPermission.MODAL_DEV_ON) && cicKitStore.debugMod" />
   <ToastCmp />
+  <RegisterSW />
 </template>
 
 <style scoped>

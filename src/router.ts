@@ -23,6 +23,7 @@ import DemoObjectViewer from './views/components/DemoObjectViewer.vue';
 import DemoAccordion from './views/components/DemoAccordion.vue';
 import DemoContainerSub from './views/components/DemoContainerSub.vue';
 import DemoBtnMoveIcon from './views/components/DemoBtnMoveIcon.vue';
+import DemoToolbarView from './views/components/DemoToolbarView.vue';
 import DemoNetwork from './views/utils/DemoNetwork.vue';
 import DemoLoading from './views/global-components/DemoLoading.vue';
 import DemoCicKitStore from './views/global-components/DemoCicKitStore.vue';
@@ -33,6 +34,9 @@ import DemoLogo from './views/components/DemoLogo.vue';
 import DemoAvatar from './views/components/DemoAvatar.vue';
 import DemoAuth from './views/global-components/DemoAuth.vue';
 import DemoViewsSettings from './views/views/DemoViewsSettings.vue';
+import DemoFieldInputsView from './views/form/DemoFieldInputsView.vue';
+import DemoPushView from './views/firebase/DemoPushView.vue';
+import DemoTimestampView from './views/utils/DemoTimestampView.vue';
 
 // ===================================================================================================
 export const routes: RouteRecordRaw[] = [
@@ -50,6 +54,7 @@ export const routes: RouteRecordRaw[] = [
   { path: '/demo-logo', name: 'Logo', component: DemoLogo, meta: { group: '_components', icon: 'deployed_code' } },
   { path: '/demo-modal', name: 'Modal', component: DemoModal, meta: { group: '_components', icon: 'dialogs' } },
   { path: '/demo-object-viewer', name: 'Object Viewer', component: DemoObjectViewer, meta: { group: '_components', icon: 'data_object' } },
+  { path: '/demo-toolbar', name: 'Toolbar', component: DemoToolbarView, meta: { group: '_components', icon: 'bottom_panel_open' } },
 
   // _global-components
   { path: '/demo-auth', name: 'Auth', component: DemoAuth, meta: { group: '_global-components', icon: 'verified_user' } },
@@ -59,8 +64,10 @@ export const routes: RouteRecordRaw[] = [
 
   // _firebase
   { path: '/demo-firebase-model-api', name: 'FirebaseModelApi', component: DemoFirebaseModelApi, meta: { group: '_firebase', icon: 'cloud' } },
+  { path: '/demo-push', name: 'Push', component: DemoPushView, meta: { group: '_firebase', icon: 'notifications_active' } },
 
   // _form
+  { path: '/demo-field-inputs', name: 'Field Inputs', component: DemoFieldInputsView, meta: { group: '_form', icon: 'edit_note' } },
   { path: '/demo-vee-validate', name: 'Vee Validate', component: DemoVeeValidate, meta: { group: '_form', icon: 'fact_check' } },
 
   // _views (coerenti e senza collisioni)
@@ -86,6 +93,7 @@ export const routes: RouteRecordRaw[] = [
   { path: '/demo-network', name: 'Network', component: DemoNetwork, meta: { group: '_utils', icon: 'wifi' } },
   { path: '/demo-pick-random', name: 'PickRandom', component: DemoPickRandom, meta: { group: '_utils', icon: 'casino' } },
   { path: '/demo-share-link', name: 'ShareLink', component: DemoShareLink, meta: { group: '_utils', icon: 'share' } },
+  { path: '/demo-timestamp', name: 'Timestamp', component: DemoTimestampView, meta: { group: '_utils', icon: 'schedule' } },
   { path: '/demo-use-debounce', name: 'UseDebounce', component: DemoUseDebounce, meta: { group: '_utils', icon: 'speed' } },
   { path: '/demo-use-routeTo', name: 'UseRouteTo', component: DemoUseRouteTo, meta: { group: '_utils', icon: 'alt_route' } },
 ];

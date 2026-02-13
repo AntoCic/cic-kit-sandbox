@@ -11,7 +11,9 @@ const imgLoghi = [
   "/img/utils/d.png",
 ];
 
-const views = cicKitStore.defaultViews;
+type DefaultViewsState = typeof cicKitStore.defaultViews & { logoUrl: string };
+const views = cicKitStore.defaultViews as DefaultViewsState;
+views.logoUrl ||= "/img/logo/logo.png";
 
 // actions
 function setLogo(url: string) {
