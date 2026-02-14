@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from "vue";
-import { Btn, RegisterSW, _Auth, pushMsg } from "cic-kit";
-import { VAPID_PUBLIC_KEY } from "../../firebase-config";
-
-pushMsg.vapidPublicKey = VAPID_PUBLIC_KEY;
+import { Btn, _Auth, pushMsg } from "cic-kit";
 
 const token = ref<string | null>(null);
 const tokenRegistered = ref(false);
@@ -64,7 +61,6 @@ onMounted(() => {
 
 <template>
   <div class="container py-4 pb-t overflow-auto h-100">
-    <RegisterSW />
 
     <h2 class="f-calSans mb-3">Demo Push</h2>
 
@@ -74,7 +70,7 @@ onMounted(() => {
         API supportata: <strong>{{ isSupported ? "SI" : "NO" }}</strong><br />
         Permission: <strong>{{ permission }}</strong><br />
         Current UID: <code>{{ currentUid }}</code><br />
-        VAPID key: <strong>{{ VAPID_PUBLIC_KEY ? "OK" : "Mancante" }}</strong><br />
+        VAPID key: <strong>{{ pushMsg.vapidPublicKey ? "OK" : "Mancante" }}</strong><br />
         Token registrato su _Auth?.user: <strong>{{ tokenRegistered ? "SI" : "NO" }}</strong>
       </p>
       <div class="d-flex gap-2 flex-wrap">

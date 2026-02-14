@@ -1,3 +1,9 @@
+## v0.0.10 - 2026-02-14
+
+feat: pass registerSW callback from app and align push setup
+
+---
+
 ## v0.0.9 - 2026-02-10
 
 Aggiorna regole storage e dipendenze; aggiunge demo route e piccole pulizie UI

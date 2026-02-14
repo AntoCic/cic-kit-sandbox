@@ -4,9 +4,9 @@ import App from "./App.vue";
 import { router } from "./router";
 import "./main.scss";
 import { setupFirebase, initAuth, _CurrentUser } from "cic-kit";
-import { firebaseConfig } from "./firebase-config";
+import { firebaseConfig, VAPID_PUBLIC_KEY } from "./firebase-config";
 
-setupFirebase(firebaseConfig);
+setupFirebase(firebaseConfig, VAPID_PUBLIC_KEY);
 export const Auth = initAuth(_CurrentUser);
 
 const app = createApp(App);

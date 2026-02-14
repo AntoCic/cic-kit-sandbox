@@ -6,6 +6,7 @@ import HeaderApp from './HeaderApp.vue';
 import router, { routes } from './router';
 import { Auth } from './main';
 import { toolbarOffcanvasTabs } from "./toolbarMenu";
+import { registerSW } from "virtual:pwa-register";
 
 const route = useRoute();
 const active = ref("intro")
@@ -146,7 +147,7 @@ onBeforeUnmount(() => {
   <ToolbarApp glass primary-dark="#F05454" primary-light=" #31475e4d" />
   <ModalDev v-if="Auth?.user?.hasPermission(defaultUserPermission.MODAL_DEV_ON) && cicKitStore.debugMod" />
   <ToastCmp />
-  <RegisterSW />
+  <RegisterSW :registerSW="registerSW" />
 </template>
 
 <style scoped>
