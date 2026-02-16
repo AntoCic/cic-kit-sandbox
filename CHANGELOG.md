@@ -1,3 +1,9 @@
+## v0.0.11 - 2026-02-16
+
+git commit -m "feat: aggiorna integrazione cic-kit e update PWA" -m "- aggiorna cic-kit alla v0.0.25
+
+---
+
 ## v0.0.10 - 2026-02-14
 
 feat: pass registerSW callback from app and align push setup

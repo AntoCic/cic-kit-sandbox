@@ -10,4 +10,4 @@ export const firebaseConfig = {
     functionsRegion: "europe-west1"
 } as const
 
-export const VAPID_PUBLIC_KEY = "BJrUDUILmW2_ZcXwwqxItG1Ob_Zw3eeYeiLTh4Wx0wJqukxs4TzyBc7GGe7JEw-nR4clpyrWG-4THoM_N5etzAI" as const
+export const VAPID_PUBLIC_KEY = "BLNbSUNMgnzBwxJQUPjkf4moRNM5ONuqq7ULvSaJoLkYr9cgrvMHoiYVuNGyFYPK8O_vtDtiAdBmC_ZEu-w4vck" as const

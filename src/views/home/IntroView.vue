@@ -1,8 +1,35 @@
 <script setup lang="ts">
 import { Auth } from '@src/main';
-import { Btn, BtnMoveIcon } from 'cic-kit';
+import { Btn, BtnMoveIcon, toast } from 'cic-kit';
 
 const reload = () => window.location.reload();
+
+const update = () => {
+
+    if (!('serviceWorker' in navigator)) {
+        toast.warning('ℹ️ Aggiornamento disponibile, ma il browser non supporta i Service Worker');
+        return;
+    }
+
+    navigator.serviceWorker
+        .getRegistration()
+        .then((reg) => {
+            if (!reg) {
+                toast.warning('ℹ️ Nessun Service Worker registrato');
+                return;
+            }
+            toast.success('✨ Nuova versione disponibile, ricarico la pagina…');
+            return reg
+                .update()
+                .then(() => new Promise((r) => setTimeout(r, 2000)));
+        })
+        .then(() => {
+            window.location.reload();
+        })
+        .catch(() => {
+            toast.error('Errore durante l’aggiornamento dell’app');
+        });
+}
 </script>
 
 <template>
@@ -16,7 +43,6 @@ const reload = () => window.location.reload();
                     :to="{ name: 'View: Login' }" />
                 <Btn v-else icon="power_settings_circle" color="danger" variant="ghost" class="rounded-pill p-1"
                     @click="() => Auth.logout()" />
-                <BtnMoveIcon icon="refresh" @click="reload">Ricarica</BtnMoveIcon>
             </div>
             <div class="col-12 mb-4">
                 <p>
@@ -26,6 +52,11 @@ const reload = () => window.location.reload();
                     pensato per semplificare lo sviluppo, favorire il riuso del codice e mantenere una struttura chiara
                     e manutenibile.
                 </p>
+            </div>
+
+            <div class="col-12">
+                <BtnMoveIcon icon="system_update_alt" @click="update">Update</BtnMoveIcon>
+                <BtnMoveIcon icon="refresh" @click="reload">Ricarica</BtnMoveIcon>
             </div>
         </div>
     </div>
