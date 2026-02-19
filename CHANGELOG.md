@@ -1,3 +1,9 @@
+## v0.0.12 - 2026-02-19
+
+test field file
+
+---
+
 ## v0.0.11 - 2026-02-16
 
 git commit -m "feat: aggiorna integrazione cic-kit e update PWA" -m "- aggiorna cic-kit alla v0.0.25

@@ -35,6 +35,7 @@ import DemoAvatar from './views/components/DemoAvatar.vue';
 import DemoAuth from './views/global-components/DemoAuth.vue';
 import DemoViewsSettings from './views/views/DemoViewsSettings.vue';
 import DemoFieldInputsView from './views/form/DemoFieldInputsView.vue';
+import DemoFieldFile from './views/form/DemoFieldFile.vue';
 import DemoPushView from './views/firebase/DemoPushView.vue';
 import DemoTimestampView from './views/utils/DemoTimestampView.vue';
 
@@ -67,6 +68,7 @@ export const routes: RouteRecordRaw[] = [
   { path: '/demo-push', name: 'Push', component: DemoPushView, meta: { group: '_firebase', icon: 'notifications_active' } },
 
   // _form
+  { path: '/demo-field-file', name: 'Field File', component: DemoFieldFile, meta: { group: '_form', icon: 'upload_file' } },
   { path: '/demo-field-inputs', name: 'Field Inputs', component: DemoFieldInputsView, meta: { group: '_form', icon: 'edit_note' } },
   { path: '/demo-vee-validate', name: 'Vee Validate', component: DemoVeeValidate, meta: { group: '_form', icon: 'fact_check' } },
 

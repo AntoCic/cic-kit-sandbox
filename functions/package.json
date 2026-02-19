@@ -8,7 +8,6 @@
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "i:l": "npm uninstall cic-kit-firebase-functions && npm i ../../../cic-kit-firebase-functions/cic-kit-firebase-functions-0.0.2.tgz",
     "i:o": "npm uninstall cic-kit-firebase-functions && npm i cic-kit-firebase-functions"
   },
   "engines": {
